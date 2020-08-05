@@ -1,5 +1,6 @@
 package com.offcn.service;
 
+import com.offcn.entity.PageResult;
 import com.offcn.pojo.People;
 
 import java.util.List;
@@ -8,7 +9,14 @@ public interface PeopleService {
 
     //获取全部用户数据
     public List<People> getUserList();
-
+    /**
+     * 分页查询
+     */
+    public PageResult findPage(int pageNo, int pageSize);
+   /* *//**
+     * 根据条件分页查询
+     *//*
+    public PageResult findPage(TbBrand brand, int pageNo, int pageSize);*/
     //新增用户数据
     public void createUser(People people);
 

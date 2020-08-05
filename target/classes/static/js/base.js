@@ -1,1 +1,1 @@
-var app = angular.module('people', []);
+var app=angular.module('people',['pagination']);

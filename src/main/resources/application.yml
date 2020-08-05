@@ -8,5 +8,5 @@ spring:
 #springboot整合mybatis
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+  config-location: classpath:config/mybatis-config.xml
   type-aliases-package: com.offcn.pojo
-

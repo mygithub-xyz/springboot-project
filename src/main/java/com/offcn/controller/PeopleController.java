@@ -1,4 +1,5 @@
 package com.offcn.controller;
+import com.offcn.entity.PageResult;
 import com.offcn.pojo.People;
 import com.offcn.service.PeopleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,19 @@ public class PeopleController {
     public List<People> getPeopleList() {
         return peopleService.getUserList();
     }
+
+    /**
+     * 分页查询
+     */
+    @RequestMapping("/findPage")
+    public PageResult findPage(int page, int rows) {
+        return peopleService.findPage( page, rows );
+    }
+
+   /* @RequestMapping("/search")
+    public PageResult search(@RequestBody People people, int page, int rows) {
+        return peopleService.findPage(people, page, rows );
+    }*/
 
     /***
      * 新增用户

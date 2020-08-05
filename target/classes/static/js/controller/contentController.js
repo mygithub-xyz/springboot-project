@@ -1,5 +1,9 @@
 //广告控制层（运营商后台）
-app.controller("contentController", function ($scope, contentService) {
+app.controller("contentController", function ($scope,$controller, contentService) {
+
+    //继承baseController,本质上继承的是$scope
+    $controller('baseController',{$scope:$scope});
+
     $scope.peopleList = [];//广告集合
     $scope.findAll = function () {
         contentService.findAll().success(
@@ -19,6 +23,22 @@ app.controller("contentController", function ($scope, contentService) {
         contentService.reloadList($scope.searchEntity.name).success(
             function (response) {
                 $scope.peopleList = response;
+            }
+        );
+    }
+
+
+    $scope.searchEntity = {};
+    /**
+     * 条件查询
+     */
+    $scope.search=function (page, rows) {
+        brandService.search(page, rows, $scope.searchEntity).success(
+            function (response) {
+                $scope.list = response.rows;
+
+                //把后台的总条数给$scope.paginationConf
+                $scope.paginationConf.totalItems = response.total;
             }
         );
     }
@@ -91,4 +111,5 @@ app.controller("contentController", function ($scope, contentService) {
             );
         }
     }
+
 });
