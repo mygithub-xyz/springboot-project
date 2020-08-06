@@ -24,8 +24,7 @@
     <script type="text/javascript" src="js/controller/contentController.js"></script>
 </head>
 
-<body class="hold-transition skin-red sidebar-mini" ng-app="people" ng-controller="contentController"
-      ng-init="findAll()">
+<body class="hold-transition skin-red sidebar-mini" ng-app="people" ng-controller="contentController">
 <!-- .box-body -->
 <div class="box-header with-border">
     <h3 class="box-title">学生管理</h3>
@@ -54,8 +53,8 @@
         </div>
         <div class="box-tools pull-right">
             <div class="has-feedback">
-                <div class="has-feedback">姓名:<input ng-model="searchEntity.name">
-                    身份证号码:<input ng-model="searchEntity.firstChar">
+                <div class="has-feedback">姓名:<input ng-model="searchEntity.pname">
+                    身份证号码:<input ng-model="searchEntity.countryid">
                     <button class="btn btn-default" ng-click="reloadList()">查询</button>
                 </div>
             </div>
@@ -76,7 +75,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="entity in peopleList">
+            <tr ng-repeat="entity in list">
                 <td><input type="checkbox" ng-value="{{entity.pid}}" ng-model="entity.checked"
                            ng-click="updateSelection($event, entity.pid)"></td>
                 <td>{{$index+1}}</td>

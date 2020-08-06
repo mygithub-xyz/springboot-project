@@ -24,5 +24,5 @@ public interface PeopleDao {
     @Select("select * from people where pid=#{pid}")
     public People findOne(Long pid);
 
-    public List<People> findByPnameLike(String name);
+    public List<People> getPeopleList(@Param("pname") String pname,@Param("countryid") String countryid);
 }

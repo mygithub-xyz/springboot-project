@@ -26,10 +26,11 @@ public class PeopleServiceImpl implements PeopleService {
      * @param pageSize
      * @return
      */
-    public PageResult findPage(int pageNo, int pageSize) {
+    @Override
+    public PageResult findPage(People people,int pageNo, int pageSize) {
 
         PageHelper.startPage( pageNo, pageSize );
-        Page<People> page = (Page<People>) peopleDao.getAll();
+        Page<People> page = (Page<People>) peopleDao.getPeopleList(people.getPname(),people.getCountryid());
         return new PageResult( page.getTotal(), page.getResult() );
     }
     @Override
@@ -53,8 +54,4 @@ public class PeopleServiceImpl implements PeopleService {
         peopleDao.delete(pid);
     }
 
-    @Override
-    public List<People> selectName(String name) {
-        return peopleDao.findByPnameLike(name);
-    }
 }
