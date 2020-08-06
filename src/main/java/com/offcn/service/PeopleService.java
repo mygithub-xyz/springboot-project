@@ -12,7 +12,7 @@ public interface PeopleService {
     /**
      * 分页查询
      */
-    public PageResult findPage(int pageNo, int pageSize);
+    public PageResult findPage(People people,int pageNo, int pageSize);
    /* *//**
      * 根据条件分页查询
      *//*
@@ -28,7 +28,4 @@ public interface PeopleService {
 
     //删除指定id用户
     public void deleteUser(Long pid);
-
-    //名字模糊
-    public List<People> selectName(String name);
 }

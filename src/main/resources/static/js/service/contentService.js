@@ -7,17 +7,16 @@ app.service("contentService", function ($http) {
     this.findOne = function (pid) {
         return $http.get("people/getOne?pid="+pid);
     }
-    this.reloadList = function (pname) {
-        return $http.get("people/findByPnameLike?pname="+pname);
+    this.search=function (page, rows,searchEntity) {
+        return $http.post("people/search?page="+page+"&rows="+rows,searchEntity);
     }
-
     this.save = function (people) {
         return $http.post("people/add",people);
     }
     this.edit = function (pid,people) {
-        return $http.post("people/edit?pid="+pid,people);
+        return $http.put("people/edit?pid="+pid,people);
     }
     this.dele = function (selectIds) {
-        return $http.post("people/delete?selectIds="+selectIds);
+        return $http.delete("people/delete?selectIds="+selectIds);
     }
 });
