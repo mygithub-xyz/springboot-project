@@ -1,5 +1,6 @@
 package com.offcn.service;
 
+import com.offcn.entity.PageResult;
 import com.offcn.pojo.People;
 
 import java.util.List;
@@ -8,7 +9,14 @@ public interface PeopleService {
 
     //获取全部用户数据
     public List<People> getUserList();
-
+    /**
+     * 分页查询
+     */
+    public PageResult findPage(People people,int pageNo, int pageSize);
+   /* *//**
+     * 根据条件分页查询
+     *//*
+    public PageResult findPage(TbBrand brand, int pageNo, int pageSize);*/
     //新增用户数据
     public void createUser(People people);
 
@@ -20,7 +28,4 @@ public interface PeopleService {
 
     //删除指定id用户
     public void deleteUser(Long pid);
-
-    //名字模糊
-    public List<People> selectName(String name);
 }

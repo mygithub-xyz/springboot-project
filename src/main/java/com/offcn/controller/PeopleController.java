@@ -1,12 +1,19 @@
 package com.offcn.controller;
+import com.offcn.entity.PageResult;
+import com.offcn.entity.Result;
 import com.offcn.pojo.People;
 import com.offcn.service.PeopleService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@Api(tags = "管理相关接口")
 @RequestMapping("/people")
 public class PeopleController {
     @Autowired
@@ -16,9 +23,28 @@ public class PeopleController {
      * 获取全部用户信息
      * @return
      */
-    @RequestMapping("/findAll")
+    @GetMapping("/findAll")
+    @ApiOperation("查询所有用户的接口")
     public List<People> getPeopleList() {
         return peopleService.getUserList();
+    }
+
+    /**
+     * 分页查询
+     */
+   /* @RequestMapping("/findPage")
+    public PageResult findPage(int page, int rows) {
+        return peopleService.findPage( page, rows );
+    }
+*/
+    @PostMapping("/search")
+    @ApiOperation("分页查询接口")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "page", value = "当前页", dataType = "int",defaultValue = "1"),
+            @ApiImplicitParam(name = "rows", value = "条数", dataType = "int",defaultValue = "10"),
+    })
+    public PageResult search(@RequestBody People people, int page, int rows) {
+        return peopleService.findPage(people, page, rows );
     }
 
     /***
@@ -26,12 +52,14 @@ public class PeopleController {
      * @return
      */
     @PostMapping("/add")
-    public String createPeople(@RequestBody People people) {
+    @ApiOperation("添加用户的接口")
+    public Result createPeople(@RequestBody People people) {
         try {
             peopleService.createUser(people);
-            return "success";
+            return new Result(true,"添加成功！！！");
         }catch (Exception e){
-            return "error";
+            e.printStackTrace();
+            return new Result(false,"添加失败！，请重试！！");
         }
     }
 
@@ -40,7 +68,12 @@ public class PeopleController {
      * @param pid
      * @return
      */
-    @RequestMapping("/getOne")
+
+    @GetMapping("/getOne")
+    @ApiOperation("查询用户的接口")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "pid", value = "用户id")
+    })
     public People getPeople(Long pid) {
 
         return peopleService.getUser(pid);
@@ -51,13 +84,17 @@ public class PeopleController {
      *
      * @param pid
      */
-    @RequestMapping("/edit")
-    public String updatePeople( Long pid, @RequestBody People people) {
+    @PutMapping("/edit")
+    @ApiOperation("修改用户的接口")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "pid", value = "用户id")
+    })
+    public Boolean updatePeople( Long pid, @RequestBody People people) {
       try{
           peopleService.updateUser(pid, people);
-        return "success";
+        return true;
     }catch (Exception e){
-        return "error";
+        return false;
     }
     }
 
@@ -66,28 +103,21 @@ public class PeopleController {
      * @param selectIds
      * @return
      */
-    @RequestMapping("/delete")
-    public String deletePeople( Long [] selectIds) {
+    @DeleteMapping("/delete")
+    @ApiOperation("删除用户的接口")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "selectIds", value = "用户id集合",dataType = "Integer",allowMultiple = true, required = true )
+
+    })
+    public Boolean deletePeople( Long [] selectIds) {
         try {
             for (Long selectId : selectIds) {
                 peopleService.deleteUser(selectId);
             }
-            return "success";
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
-            return "false";
+            return false;
         }
-
-    }
-
-    /**
-     * 姓名模糊查询
-     *
-     * @param pname
-     * @return
-     */
-    @RequestMapping("/findByPnameLike")
-    public List<People> findByPnameLike(String pname) {
-        return peopleService.selectName("%" + pname + "%");
     }
 }
