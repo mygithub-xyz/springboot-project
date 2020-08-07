@@ -1,5 +1,8 @@
 package com.offcn.entity;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
 
 /**
@@ -7,10 +10,11 @@ import java.io.Serializable;
  * 是否成功 success: true false
  * 信息 message
  */
+@ApiModel
 public class Result implements Serializable {
-
+    @ApiModelProperty(value="返回结果true or false")
     private boolean success;
-
+    @ApiModelProperty(value="返回的提示信息message")
     private String message;
 
     public Result(boolean success, String message) {
