@@ -1,5 +1,8 @@
 package com.offcn.entity;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -8,9 +11,11 @@ import java.util.List;
  * 总条数 total
  * 当前页的行列表 rows
  */
+@ApiModel
 public class PageResult implements Serializable {
-
+    @ApiModelProperty(value="分页查询总条数")
     private long total;//总条数
+    @ApiModelProperty(value="分页结果集")
     private List rows;
 
     public PageResult(long total, List rows) {
