@@ -16,4 +16,7 @@ angularjs 前端框架搭建
 | 持久层     | MySQL                   |
 |开发工具    |jdk1.8,idea|
 
-
+#权限管理springsecurity
+#分页pagehleper
+#登录控制
+#CRUD
