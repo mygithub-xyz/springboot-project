@@ -22,6 +22,6 @@ angularjs 前端框架搭建|
 # 权限管理springsecurity
 ![首页界面](https://github.com/mygithub-xyz/springboot-project/blob/master/55CI%24%5BW83%5B%7D%6087J2014ZW%7B6.png)
 # 分页pagehleper,及CRUD
-![](https://github.com/mygithub-xyz/springboot-project/blob/master/92JYX7R%24Z2HSW_%5DO97B%5BL0A.png)
+![crud管理](https://github.com/mygithub-xyz/springboot-project/blob/master/92JYX7R%24Z2HSW_%5DO97B%5BL0A.png)
 # 接口文档
-![](https://github.com/mygithub-xyz/springboot-project/blob/master/G%25YDB53GCO71D%7BXUGU78DR.png)
+![swagger接口文档](https://github.com/mygithub-xyz/springboot-project/blob/master/G%25YDB)53GCO71D%7BXUGU78DR.png)
