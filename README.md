@@ -25,3 +25,7 @@ angularjs 前端框架搭建|
 ![crud管理](https://github.com/mygithub-xyz/springboot-project/blob/master/92JYX7R%24Z2HSW_%5DO97B%5BL0A.png)
 # 接口文档
 ![swagger接口文档](https://github.com/mygithub-xyz/springboot-project/blob/master/G%25YDB)53GCO71D%7BXUGU78DR.png)
+# 项目完整代码，---00001分支提取
+# 测试地址 
+|http://www.mygithub.xyz:8082/index.html|admin      |
+
