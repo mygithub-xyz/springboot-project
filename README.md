@@ -17,9 +17,11 @@ angularjs 前端框架搭建|
 | 业务层     | restful风格CRUD |
 | 持久层     | MySQL                   |
 |开发工具    |jdk1.8,idea|
-
-# 权限管理springsecurity
-# 分页pagehleper
 # 登录控制
-# CRUD
-![123](https://github.com/mygithub-xyz/springboot-project/blob/master/%25Z8%5D%5B3P3YKEFIP%25VQN~HLKT.png);
+![登录界面](https://github.com/mygithub-xyz/springboot-project/blob/master/%25Z8%5D%5B3P3YKEFIP%25VQN~HLKT.png)
+# 权限管理springsecurity
+![首页界面](https://github.com/mygithub-xyz/springboot-project/blob/master/55CI%24%5BW83%5B%7D%6087J2014ZW%7B6.png)
+# 分页pagehleper,及CRUD
+![](https://github.com/mygithub-xyz/springboot-project/blob/master/92JYX7R%24Z2HSW_%5DO97B%5BL0A.png)
+# 接口文档
+![](https://github.com/mygithub-xyz/springboot-project/blob/master/G%25YDB)53GCO71D%7BXUGU78DR.png)
