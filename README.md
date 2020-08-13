@@ -4,12 +4,12 @@ springboot
 
 #### 项目简介
 
-#springboot管理练手项目基于前后端分离;
-#采用Springboot+Mybaits框架;
-#swagger接口管理;
-#angularjs 前端框架搭建;
-#权限管理springsecurity;
-#分页pagehleper;
+### springboot管理练手项目基于前后端分离;
+### 采用Springboot+Mybaits框架;
+### swagger接口管理;
+### angularjs 前端框架搭建;
+### 权限管理springsecurity；<br/>
+分页pagehleper;
 
 | 模块       | **技术栈**                                                   |
 | :--------- | ------------------------------------------------------------ |
@@ -26,8 +26,10 @@ springboot
 # 接口文档
 ![swagger接口文档](https://github.com/mygithub-xyz/springboot-project/blob/master/jikouwendnag.png)
 # 项目完整代码，---00001分支提取
-# 测试地址 
+<br>
 url:https://github.com/mygithub-xyz/springboot-project.git
+<br>
+# 测试地址 
 | 测试地址       | **账号**  
 | :--------- | ------------------------------------------------------------ |
 | http://www.mygithub.xyz:8082/index.html | admin           |
