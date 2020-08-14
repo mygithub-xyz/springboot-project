@@ -6,7 +6,8 @@ springboot
 
 springboot管理练手项目基于前后端分离,采用Springboot+Mybaits框架,swagger接口管理;<br>
 angularjs 前端框架搭建,权限管理springsecurity,分页组件pagehleper;<br>
-log4j日志管理，poi批量导出,devtools热部署组件ctr+f9自动部署。<br>
+log4j日志管理，poi批量导出,devtools热部署组件。<br>
+# pom依赖  ctr+f9自动部署
    <!--热部署Ctr+F9 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
